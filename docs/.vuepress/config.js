@@ -13,7 +13,7 @@ export default defineUserConfig({
                 activeMatch: '/guide/'
             },
             {
-                text: '文档类',
+                text: '技术类',
                 children: [
                     {
                         text: 'Dev',
@@ -41,7 +41,7 @@ export default defineUserConfig({
                             },
                             {
                                 text: 'Nginx',
-                                link: '/group/ops/Nginx.md'
+                                link: '/group/ops/nginx.md'
                             },
                             {
                                 text: 'Docker',
@@ -52,6 +52,28 @@ export default defineUserConfig({
                 ]
             },
             {
+                text: '游戏类',
+                children: [
+                    {
+                        text: 'Minecraft',
+                        children: [
+                            {
+                                text: 'DataPack数据包',
+                                link: '/group/game/mc/datapack.md'
+                            },
+                            {
+                                text: 'Fabric模组开发',
+                                link: '/group/game/mc/fabric.md'
+                            },
+                            {
+                                text: 'Server服务器',
+                                link: '/group/game/mc/server.md'
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
                 text: '关于文档',
                 children: [
                     {
@@ -59,11 +81,11 @@ export default defineUserConfig({
                         link: '/group/logs/logs.md'
                     }
                 ]
-            }
+            },
         ],
         contributorsText: '贡献者',
         lastUpdatedText: '最后一次更新',
-        notFound: '爸爸去哪了？',
+        notFound: ['爸爸去哪了？', '虚空乱流！', '前面的区域以后再来探索吧', '你没资格，没资格啊', '还在施工！'],
         backToHome: '回去咯'
     })
 })
