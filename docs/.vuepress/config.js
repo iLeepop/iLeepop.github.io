@@ -7,6 +7,7 @@ export default defineUserConfig({
     description: '欢迎查看我的技术文档',
     head: [['link', { rel: 'icon', href: '/icon/fav.png'}]],
     theme: defaultTheme({
+        logo: '/icon/fav.png',
         navbar: [
             {
                 text: '看招',
