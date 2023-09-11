@@ -1,10 +1,11 @@
 import { defineUserConfig, defaultTheme } from "vuepress"
 
 export default defineUserConfig({
+    base: '/docs/',
     lang: 'zh-CN',
     title: 'Ilee-Docs',
     description: '欢迎查看我的技术文档',
-    base: '/docs/',
+    head: [['link', { rel: 'icon', href: '/icon/fav.png'}]],
     theme: defaultTheme({
         navbar: [
             {
