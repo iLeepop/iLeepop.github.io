@@ -955,7 +955,7 @@ Options:
 - import 导入的是容器包；load 加载的是镜像包，但是最终都会恢复成镜像
 - import 恢复的镜像只包含当前镜像一层,镜像分层合并层；load 恢复的镜像与原镜像是完全相同的，镜像分层信息一致
 - import 恢复的镜像就是新构建的镜像，与原镜像的 ImageID 不同；load 恢复的镜像与原镜像是同一个镜像，即 ImageID 相同
-- import 可以导入的镜像指定<repository>于<tag>，load 加载的镜像不能指定，于原镜像相同
+- import 可以导入的镜像指定 repository 与 tag，load 加载的镜像不能指定，于原镜像相同
 
 ##### export&import/commit
 
