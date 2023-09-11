@@ -8,16 +8,62 @@ export default defineUserConfig({
     theme: defaultTheme({
         navbar: [
             {
-                text: 'Foo',
-                link: '/foo/'
+                text: '看招',
+                link: '/guide/',
+                activeMatch: '/guide/'
             },
             {
-                text: 'Other',
-                children: ['/other/foo.md', '/other/bar.md']
+                text: '文档类',
+                children: [
+                    {
+                        text: 'Dev',
+                        children: [
+                            {
+                                text: 'Java',
+                                link: '/group/dev/java.md'
+                            },
+                            {
+                                text: 'Spring',
+                                link: '/group/dev/spring.md'
+                            },
+                            {
+                                text: 'JavaScript',
+                                link: '/group/dev/javascript.md'
+                            }
+                        ]
+                    },
+                    {
+                        text: 'Ops',
+                        children: [
+                            {
+                                text: 'Linux',
+                                link: '/group/ops/linux.md'
+                            },
+                            {
+                                text: 'Nginx',
+                                link: '/group/ops/Nginx.md'
+                            },
+                            {
+                                text: 'Docker',
+                                link: '/group/ops/docker.md'
+                            }
+                        ]
+                    }
+                ]
             },
-            '/bar/README.md'
+            {
+                text: '关于文档',
+                children: [
+                    {
+                        text: '更新日志',
+                        link: '/group/logs/logs.md'
+                    }
+                ]
+            }
         ],
         contributorsText: '贡献者',
-        lastUpdatedText: '最后一次更新'
+        lastUpdatedText: '最后一次更新',
+        notFound: '爸爸去哪了？',
+        backToHome: '回去咯'
     })
 })
