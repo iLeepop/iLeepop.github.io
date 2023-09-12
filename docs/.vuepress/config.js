@@ -5,7 +5,7 @@ export default defineUserConfig({
     lang: 'zh-CN',
     title: 'Ilee-Docs',
     description: '欢迎查看我的技术文档',
-    head: [['link', { rel: 'icon', href: '/icon/fav.png'}]],
+    head: [['link', { rel: 'icon', href: '/docs/icon/fav.png'}]],
     theme: defaultTheme({
         logo: '/icon/fav.png',
         navbar: [
