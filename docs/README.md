@@ -6,5 +6,5 @@ actions:
   - text: 看招吧
     link: /guide/
     type: primary
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: WTFPL Licensed | Copyright © 2023-present Ilee Cury
 ---
