@@ -1,12 +1,9 @@
 ---
 lang: zh-CN
-title: 接招
 description: Guide Description
-siderbar: "auto"
-sidebarDepth: 3
 ---
 
-# 想要看？
+# 废话
 
 ::: tip
 以下废话，想看就 nt(nice try)
@@ -24,15 +21,15 @@ sidebarDepth: 3
 
 md，太多技术可以选择了，作为一个想要不断深入了解学习计算机技术的人，第一步得去学计算机的基础原理以及网络构成知识，很明显，我这里没有，那直接第二步，在你现有的数学基础上，学习数据结构以及算法！好吧，我这里也没用，那直接开始学习编程语言吧...
 
-### 一些语言
+## 一些语言
 
 C 语言、C++、C#、Java、Python、Go 语言、PHP 等等，也有 JavaScript、TypeScript，有了 Nodejs，js 也可以写后端。
 
-#### 选哪个？
+### 选哪个？
 
 想学什么学什么。
 
-#### Java
+### Java
 
 ::: tip
 copy 的百度百科
@@ -42,42 +39,42 @@ Java 是一门面向对象的编程语言，不仅吸收了 C++语言的各种�
 
 Java 具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点。Java 可以编写桌面应用程序、Web 应用程序、分布式系统和嵌入式系统应用程序等。
 
-#### C++
+### C++
 
 妹写
 
-#### Python
+### Python
 
 妹写
 
-#### JavaScript
+### JavaScript
 
 妹写
 
-#### TypeScript
+### TypeScript
 
 妹写
 
-#### Nodejs
+### Nodejs
 
 本质是一个 JavaScript 的运行时环境
 
-### 一些框架
+## 一些框架
 
 框架也就是帮助开发人员更快搭建项目的一个工具，用上了框架，再离开框架进行开发可就难咯。
 
-#### Spring
+### Spring
 
 基于 Java 开发的框架，目前占据主流地位。
 
-#### Vuejs
+### Vuejs
 
 近年很火的开源前端框架，主要开源。:laughing:
 
 它的开发思想和我很对味。
 
-### 一些中间件
+## 一些中间件
 
 暂时不写。
 
-### 一些工具
+## 一些工具
