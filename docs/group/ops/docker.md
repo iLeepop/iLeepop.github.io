@@ -44,7 +44,7 @@ sidebarDepth: 3
 
 ### 容器创建并启动
 
-[docker run](###run命令)用于创建并启动容器，同时会运行容器中指定的应用。这个指定的应用要么通过[docker run](###run命令)中的[command]指定，要么通过容器的 Dockerfile 中的 CMD 指令指定。
+[docker run](#run-命令)用于创建并启动容器，同时会运行容器中指定的应用。这个指定的应用要么通过[docker run](#run-命令)中的[command]指定，要么通过容器的 Dockerfile 中的 CMD 指令指定。
 
 容器两种启动模式：交互模式 -it，分离模式 -d。
 
@@ -52,7 +52,7 @@ sidebarDepth: 3
 
 ### 容器创建
 
-[docker create](###create命令)命令仅用于创建一个容器，并不会启动容器。该命令没有-d 选项，因为[docker create](###create命令)创建的容器默认都是以后台方式来运行的(必须通过[docker start](###start命令) [容器]来启动)，除非在创建时指定 -it。
+[docker create](#create-命令)命令仅用于创建一个容器，并不会启动容器。该命令没有-d 选项，因为[docker create](#create-命令)创建的容器默认都是以后台方式来运行的(必须通过[docker start](#start-命令) [容器]来启动)，除非在创建时指定 -it。
 
 ### 容器退出
 
@@ -61,51 +61,51 @@ sidebarDepth: 3
 
 ### 容器状态查看
 
-[docker ps](###ps命令)命令中 -a, -q, -l, -n。
+[docker ps](#ps-命令)命令中 -a, -q, -l, -n。
 
 ### 容器再进
 
-[docker exec](###exec命令)与[docker attach](###attach命令)的区别与联系
+[docker exec](#exec-命令)与[docker attach](#attach-命令)的区别与联系
 
-[docker exec](###exec命令)会创建一个新进程来访问进程，一般与 -it 选项联用，一般使用 exit 命令退出并终止当前进程。
+[docker exec](#exec-命令)会创建一个新进程来访问进程，一般与 -it 选项联用，一般使用 exit 命令退出并终止当前进程。
 
-[docker attach](###attach命令)不会创建新进程，而是将标准输入与标准输出直接附着在容器进程之上(使用户可以通过键盘来操作容器，使容器中的输出可通过显示器展示给用户)，一般不使用选项。但需要考虑退出容器的方式是使用 exit 还是 ctrl+p+q。
+[docker attach](#attach-命令)不会创建新进程，而是将标准输入与标准输出直接附着在容器进程之上(使用户可以通过键盘来操作容器，使容器中的输出可通过显示器展示给用户)，一般不使用选项。但需要考虑退出容器的方式是使用 exit 还是 ctrl+p+q。
 
 ### 容器内进程查看
 
-[docker top](###top命令)命令后可携带 ps 命令的选项。
+[docker top](#top-命令)命令后可携带 ps 命令的选项。
 
 ### 容器日志查看
 
-[docker logs](###logs命令)查看的是容器中应用运行日志。这个应用是根据容器创建时命令([docker run](###run命令)或者[docker create](###create命令))中的[command]指定，或通过容器镜像的 Dockerfile 中的 CMD 指令指定。
+[docker logs](#logs-命令)查看的是容器中应用运行日志。这个应用是根据容器创建时命令([docker run](#run-命令)或者[docker create](#create-命令))中的[command]指定，或通过容器镜像的 Dockerfile 中的 CMD 指令指定。
 
 ### 容器启停
 
-[docker start](###start命令)启动的是容器本身，但容器在启动的同时会启动一个应用，而这个应用是根据容器创建时命令中的[command]指定，或通过容器镜像的 Dockerfile 中的 CMD 指令指定。
+[docker start](#start-命令)启动的是容器本身，但容器在启动的同时会启动一个应用，而这个应用是根据容器创建时命令中的[command]指定，或通过容器镜像的 Dockerfile 中的 CMD 指令指定。
 
 容器停止命令停止的是容器本身，但在容器停止之前会先停止容器中的所有进程的运行，也就停止了对外提供服务的应用进程。
 
-[docker pause](###pause命令)仅暂停的是容器对外提供的服务，容器本身没有停止运行，所以容器中的应用也就没有停止运行，只不过其不能通过容器再对外提供服务了。
+[docker pause](#pause-命令)仅暂停的是容器对外提供的服务，容器本身没有停止运行，所以容器中的应用也就没有停止运行，只不过其不能通过容器再对外提供服务了。
 
 ### 容器删除
 
-[docker rm](###rm命令)进行容器删除，选项 -f 进行强制删除。
+[docker rm](#rm-命令)进行容器删除，选项 -f 进行强制删除。
 
-[docker rmi](###rmi命令)进行镜像删除，选项 -f 进行强制删除，镜像的强制删除不会强制删除 UP 状态的容器的镜像。
+[docker rmi](#rmi-命令)进行镜像删除，选项 -f 进行强制删除，镜像的强制删除不会强制删除 UP 状态的容器的镜像。
 
 ### 容器与宿主机文件传递
 
 - 理解容器本身就是一个文件系统
-- 理解[docker cp](###cp命令)就是用于完成从一个文件系统复制到另一个文件系统的操作，与容器是否运行无关
-- 了解[docker cp](###cp命令)不支持容器间的文件复制
+- 理解[docker cp](#cp-命令)就是用于完成从一个文件系统复制到另一个文件系统的操作，与容器是否运行无关
+- 了解[docker cp](#cp-命令)不支持容器间的文件复制
 
 ### 提交容器为镜像
 
-- [docker commit](###commit命令)生成的镜像中包含容器的原镜像的所有分层信息包括历史记录
+- [docker commit](#commit-命令)生成的镜像中包含容器的原镜像的所有分层信息包括历史记录
 
 ### 容器的导入导出
 
-- 理解[容器镜像的导入导出对比](####容器镜像的导入导出对比)
+- 理解[容器镜像的导入导出对比](#容器镜像的导入导出对比)
 - 理解 docker export 是对镜像分层合并后视图的文件系统快照的导出，仅包含合并后的一层镜像信息，不包含原镜像分层历史记录。
 
 ## Docker 命令
@@ -1103,8 +1103,157 @@ Options:
       --volumes         Prune volumes
 ```
 
+### build命令
+
+```bash
+docker build --help
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+
+Aliases:
+  docker buildx build, docker buildx b
+
+Options:
+      --add-host strings              Add a custom host-to-IP mapping
+                                      (format: "host:ip")
+      --allow strings                 Allow extra privileged entitlement
+                                      (e.g., "network.host",
+                                      "security.insecure")
+      --attest stringArray            Attestation parameters (format:
+                                      "type=sbom,generator=image")
+      --build-arg stringArray         Set build-time variables
+      --build-context stringArray     Additional build contexts (e.g.,
+                                      name=path)
+      --builder string                Override the configured builder
+                                      instance (default "default")
+      --cache-from stringArray        External cache sources (e.g.,
+                                      "user/app:cache",
+                                      "type=local,src=path/to/dir")
+      --cache-to stringArray          Cache export destinations (e.g.,
+                                      "user/app:cache",
+                                      "type=local,dest=path/to/dir")
+      --cgroup-parent string          Optional parent cgroup for the container
+  -f, --file string                   Name of the Dockerfile (default:
+                                      "PATH/Dockerfile")
+      --iidfile string                Write the image ID to the file
+      --label stringArray             Set metadata for an image
+      --load                          Shorthand for "--output=type=docker"
+      --metadata-file string          Write build result metadata to the file
+      --network string                Set the networking mode for the
+                                      "RUN" instructions during build
+                                      (default "default")
+      --no-cache                      Do not use cache when building the image
+      --no-cache-filter stringArray   Do not cache specified stages
+  -o, --output stringArray            Output destination (format:
+                                      "type=local,dest=path")
+      --platform stringArray          Set target platform for build
+      --progress string               Set type of progress output
+                                      ("auto", "plain", "tty"). Use plain
+                                      to show container output (default
+                                      "auto")
+      --provenance string             Shorthand for "--attest=type=provenance"
+      --pull                          Always attempt to pull all
+                                      referenced images
+      --push                          Shorthand for "--output=type=registry"
+  -q, --quiet                         Suppress the build output and print
+                                      image ID on success
+      --sbom string                   Shorthand for "--attest=type=sbom"
+      --secret stringArray            Secret to expose to the build
+                                      (format:
+                                      "id=mysecret[,src=/local/secret]")
+      --shm-size bytes                Size of "/dev/shm"
+      --ssh stringArray               SSH agent socket or keys to expose
+                                      to the build (format:
+                                      "default|<id>[=<socket>|<key>[,<key>]]")
+  -t, --tag stringArray               Name and optionally a tag (format:
+                                      "name:tag")
+      --target string                 Set the target build stage to build
+      --ulimit ulimit                 Ulimit options (default [])
+```
+
+### tag命令
+
+```bash
+docker tag --help
+
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Aliases:
+  docker image tag, docker tag
+```
+
 ## DockerFile
 
 ### 简介
 
+Dockerfile是用于构建Docker镜像的脚本文件，有一系列指令构成。通过docker build命令构建镜像时，Dockerfile的指令会由上到下依次进行，每条指令都将会构建出一个镜像。这就是镜像的分层，因此，指令越多，层次越多，创建的镜像就越多，效率就会变低，所以在定义Dockerfile时，能在一个指令完成的动作就不要分成两条。
+
+### 指令
+
+- 通常指令以大写形式出现，以便区别于其它参数
+- 指令后至少携带一个参数
+- #出现在一行的最开端，代表是comment注释
+
 ### 简单构建
+
+首先安装一下C、C++的编译器
+
+```bash
+yum install -y gcc gcc-c++
+```
+
+待安装好后，还需要安装静态库
+
+```bash
+yum install -y glibc-static
+```
+
+编写hello.c文件
+
+```bash
+vim hello.c
+//进入编辑
+```
+
+```c
+#include<stdio.h>
+int main()
+{
+    printf("hello world!");
+    return 0;
+}
+```
+
+随后需要编译一下
+
+```bash
+gcc --static -o hello hello.c
+```
+
+编写Dockerfile文件
+
+```bash
+vim Dockerfile
+```
+
+```dockerfile
+FROM scratch
+ADD hello /
+CMD ["/hello"]
+```
+
+build镜像
+
+```bash
+//
+docker build -t hello-my .
+//查看镜像
+docker images
+//run镜像
+docker run hello-my
+```
+
