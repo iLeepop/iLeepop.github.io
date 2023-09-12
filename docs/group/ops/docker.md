@@ -2,6 +2,7 @@
 lang: zh-CN
 title: Docker
 description: Docker Description
+siderbar: "auto"
 sidebarDepth: 3
 ---
 

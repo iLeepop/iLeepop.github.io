@@ -2,6 +2,7 @@
 lang: zh-CN
 title: 接招
 description: Guide Description
+siderbar: "auto"
 sidebarDepth: 3
 ---
 
