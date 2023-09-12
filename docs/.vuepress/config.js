@@ -85,6 +85,7 @@ export default defineUserConfig({
                 ]
             },
         ],
+        sidebarDepth: 3,
         contributorsText: '贡献者',
         lastUpdatedText: '最后一次更新',
         notFound: ['爸爸去哪了？', '虚空乱流！', '前面的区域以后再来探索吧', '你没资格，没资格啊', '还在施工！'],
