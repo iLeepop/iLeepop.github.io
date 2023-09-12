@@ -22,15 +22,18 @@ export default defineUserConfig({
                         children: [
                             {
                                 text: 'Java',
-                                link: '/group/dev/java.md'
+                                link: '/group/dev/java.md',
+                                activeMatch: '/group/dev/java.html'
                             },
                             {
                                 text: 'Spring',
-                                link: '/group/dev/spring.md'
+                                link: '/group/dev/spring.md',
+                                activeMatch: '/group/dev/spring.html'
                             },
                             {
                                 text: 'JavaScript',
-                                link: '/group/dev/javascript.md'
+                                link: '/group/dev/javascript.md',
+                                activeMatch: '/group/dev/javascript.html'
                             }
                         ]
                     },
@@ -39,15 +42,18 @@ export default defineUserConfig({
                         children: [
                             {
                                 text: 'Linux',
-                                link: '/group/ops/linux.md'
+                                link: '/group/ops/linux.md',
+                                activeMatch: '/group/ops/linux.html'
                             },
                             {
                                 text: 'Nginx',
-                                link: '/group/ops/nginx.md'
+                                link: '/group/ops/nginx.md',
+                                activeMatch: '/group/ops/nginx.html'
                             },
                             {
                                 text: 'Docker',
-                                link: '/group/ops/docker.md'
+                                link: '/group/ops/docker.md',
+                                activeMatch: '/group/ops/docker.html'
                             }
                         ]
                     }
@@ -61,15 +67,18 @@ export default defineUserConfig({
                         children: [
                             {
                                 text: 'DataPack数据包',
-                                link: '/game/mc/datapack.md'
+                                link: '/game/mc/datapack.md',
+                                activeMatch: '/game/mc/datapack.html'
                             },
                             {
                                 text: 'Fabric模组开发',
-                                link: '/game/mc/fabric.md'
+                                link: '/game/mc/fabric.md',
+                                activeMatch: '/game/mc/fabric.html'
                             },
                             {
                                 text: 'Server服务器',
-                                link: '/game/mc/server.md'
+                                link: '/game/mc/server.md',
+                                activeMatch: '/game/mc/server.html'
                             }
                         ]
                     },
@@ -80,7 +89,8 @@ export default defineUserConfig({
                 children: [
                     {
                         text: '更新日志',
-                        link: '/logs/logs.md'
+                        link: '/logs/logs.md',
+                        activeMatch: '/logs/logs.html'
                     }
                 ]
             },

@@ -1103,7 +1103,7 @@ Options:
       --volumes         Prune volumes
 ```
 
-### build命令
+### build 命令
 
 ```bash
 docker build --help
@@ -1173,7 +1173,7 @@ Options:
       --ulimit ulimit                 Ulimit options (default [])
 ```
 
-### tag命令
+### tag 命令
 
 ```bash
 docker tag --help
@@ -1190,17 +1190,17 @@ Aliases:
 
 ### 简介
 
-Dockerfile是用于构建Docker镜像的脚本文件，有一系列指令构成。通过docker build命令构建镜像时，Dockerfile的指令会由上到下依次进行，每条指令都将会构建出一个镜像。这就是镜像的分层，因此，指令越多，层次越多，创建的镜像就越多，效率就会变低，所以在定义Dockerfile时，能在一个指令完成的动作就不要分成两条。
+Dockerfile 是用于构建 Docker 镜像的脚本文件，有一系列指令构成。通过 docker build 命令构建镜像时，Dockerfile 的指令会由上到下依次进行，每条指令都将会构建出一个镜像。这就是镜像的分层，因此，指令越多，层次越多，创建的镜像就越多，效率就会变低，所以在定义 Dockerfile 时，能在一个指令完成的动作就不要分成两条。
 
 ### 指令
 
 - 通常指令以大写形式出现，以便区别于其它参数
 - 指令后至少携带一个参数
-- #出现在一行的最开端，代表是comment注释
+- #出现在一行的最开端，代表是 comment 注释
 
 ### 简单构建
 
-首先安装一下C、C++的编译器
+首先安装一下 C、C++的编译器
 
 ```bash
 yum install -y gcc gcc-c++
@@ -1212,7 +1212,7 @@ yum install -y gcc gcc-c++
 yum install -y glibc-static
 ```
 
-编写hello.c文件
+编写 hello.c 文件
 
 ```bash
 vim hello.c
@@ -1234,7 +1234,7 @@ int main()
 gcc --static -o hello hello.c
 ```
 
-编写Dockerfile文件
+编写 Dockerfile 文件
 
 ```bash
 vim Dockerfile
@@ -1246,14 +1246,11 @@ ADD hello /
 CMD ["/hello"]
 ```
 
-build镜像
-
 ```bash
-//
+//build镜像
 docker build -t hello-my .
 //查看镜像
 docker images
 //run镜像
 docker run hello-my
 ```
-
