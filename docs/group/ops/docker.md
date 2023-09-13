@@ -1257,13 +1257,13 @@ docker run hello-my
 docker build -t hm:2.0 -t hm:3.0 -t hm:4.0 .
 ```
 
-### scratch镜像
+### scratch 镜像
 
-了解一个特殊镜像scratch。它本身是一个空镜像，但它是所有镜像的base Image，相当于面向对象编程中的Object类，scratch镜像只能在Dockerfile中被继承，不能使用其它命令操作，例如不能pull，run以及tag等等。
+了解一个特殊镜像 scratch。它本身是一个空镜像，但它是所有镜像的 base Image，相当于面向对象编程中的 Object 类，scratch 镜像只能在 Dockerfile 中被继承，不能使用其它命令操作，例如不能 pull，run 以及 tag 等等。
 
-它也不会去生成镜像中的文件系统层。在Docker中，scratch是一个保留字段，用户不能使用其作为自己的镜像名称使用。
+它也不会去生成镜像中的文件系统层。在 Docker 中，scratch 是一个保留字段，用户不能使用其作为自己的镜像名称使用。
 
-### 构建自己的CentOS镜像
+### 构建自己的 CentOS 镜像
 
 ```bash
 mkdir cent
@@ -1289,7 +1289,7 @@ docker images
 docker run --name ileecentos -it ileecentos:1.0
 ```
 
-## Dockerfile指令
+## Dockerfile 指令
 
 - 通常指令以大写形式出现，以便区别于其它参数
 - 指令后至少携带一个参数
