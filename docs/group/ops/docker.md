@@ -1186,17 +1186,11 @@ Aliases:
   docker image tag, docker tag
 ```
 
-## DockerFile
+## Dockerfile
 
 ### 简介
 
 Dockerfile 是用于构建 Docker 镜像的脚本文件，有一系列指令构成。通过 docker build 命令构建镜像时，Dockerfile 的指令会由上到下依次进行，每条指令都将会构建出一个镜像。这就是镜像的分层，因此，指令越多，层次越多，创建的镜像就越多，效率就会变低，所以在定义 Dockerfile 时，能在一个指令完成的动作就不要分成两条。
-
-### 指令
-
-- 通常指令以大写形式出现，以便区别于其它参数
-- 指令后至少携带一个参数
-- #出现在一行的最开端，代表是 comment 注释
 
 ### 简单构建
 
@@ -1215,6 +1209,8 @@ yum install -y glibc-static
 编写 hello.c 文件
 
 ```bash
+mkdir hw
+cd hw
 vim hello.c
 //进入编辑
 ```
@@ -1253,4 +1249,145 @@ docker build -t hello-my .
 docker images
 //run镜像
 docker run hello-my
+```
+
+构建多个镜像
+
+```bash
+docker build -t hm:2.0 -t hm:3.0 -t hm:4.0 .
+```
+
+### scratch镜像
+
+了解一个特殊镜像scratch。它本身是一个空镜像，但它是所有镜像的base Image，相当于面向对象编程中的Object类，scratch镜像只能在Dockerfile中被继承，不能使用其它命令操作，例如不能pull，run以及tag等等。
+
+它也不会去生成镜像中的文件系统层。在Docker中，scratch是一个保留字段，用户不能使用其作为自己的镜像名称使用。
+
+### 构建自己的CentOS镜像
+
+```bash
+mkdir cent
+cd cent
+vim Dockerfile
+```
+
+```dockerfile
+FROM centos:7
+MAINTAINER Ilee zihao02325@gmail.com
+LABEL version="1.0" description="this is a centos7 image created by Ilee"
+
+ENV WORKPATH /usr/local
+WORKDIR $WORKPATH
+
+RUN yum install -y wget vim net-tools
+CMD /bin/bash
+```
+
+```bash
+docker build -t ileecentos:1.0 .
+docker images
+docker run --name ileecentos -it ileecentos:1.0
+```
+
+## Dockerfile指令
+
+- 通常指令以大写形式出现，以便区别于其它参数
+- 指令后至少携带一个参数
+- #出现在一行的最开端，代表是 comment 注释
+
+### FROM
+
+```dockerfile
+Usage: FROM <image>[:<tag>]
+# 用于指定基础镜像，且必须是第一条指令。
+```
+
+### MAINTAINER
+
+```dockerfile
+Usage: MAINTAINER <name>
+# 该指令的参数填写一般是维护者姓名和信箱。不过，该指令官方已不建议使用，而是使用LABEL指令代替。
+```
+
+### LABEL
+
+```dockerfile
+Usage: LABEL <key>=<value> <key>=<value> ......
+# 该指令可以通过以键值对的方式包含任意镜像的元数据信息，用于代替MAINTAINER指令。通过docker inspect可以查看到LABEL于MAINTAINER的内容。
+```
+
+### ENV
+
+```dockerfile
+Usage1: ENV <key> <value>
+# 用于指定环境变量，这些环境变量，后续可以被RUN指令使用，容器运行起来之后。也可以在容器中获取这些环境变量。
+Usage2: ENV <key1>=<value1> <key2>=<value2>
+# 可以设置多个变量，每个变量为一对<key>=<value>指定。
+```
+
+### WORKDIR
+
+```dockerfile
+Usage: WORKDIR path
+# 容器打开后默认进入的目录，一般在后续的RUN、CMD、ENTRYPOINT、ADD等指令中会引用该目录，可以设置多个WORKDIR指令。后续WORKDIR指令若用的是相对路径，则会基于之前WORKDIR指令指定的路径。在使用docker run运行容器时，可以通过-w参数覆盖构建时所设置的工作目录。
+```
+
+### RUN
+
+```dockerfile
+Usage1: RUN <command>
+# 这里的<command>就是shell命令。docker build执行过程中，会使用shell运行指定的command。
+Usage2: RUN ["EXECUTABLE","PARAM1","PARAM2",...]
+# 在docker build执行过程中，会调用第一个参数"EXECUTABLE"指定的应用程序运行，并使用后面第二、第三等参数作为应用程序的运行参数。
+```
+
+### CMD
+
+```dockerfile
+Usage1: CMD ["EXECUTABLE","PARAM1","PARAM2",...]
+# 在容器启动后，即在执行完docker run后会立即调用执行"EXECUTABLE"指定的可执行文件，并使用后面第二、第三等参数作为应用程序的运行参数。
+Usage2: CMD command param1 param2
+# 这里的command就是shell命令。在容器启动后会立即执行指定的shell命令。
+```
+
+### ENTRYPOINT
+
+```dockerfile
+Usage: ENTRYPOINT
+```
+
+### EXPOSE
+
+```dockerfile
+Usage: EXPOSE
+```
+
+### ARG
+
+```dockerfile
+Usage: ARG
+```
+
+### ADD
+
+```dockerfile
+Usage: ADD
+```
+
+### COPY
+
+```### WORKDIR
+Usage: COPY
+```
+
+### ONBUILD
+
+```### WORKDIR
+Usage: ONBUILD
+```
+
+### VOLUME
+
+```dockerfile
+Usage: VOLUME
 ```
