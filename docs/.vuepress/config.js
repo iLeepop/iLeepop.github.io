@@ -100,7 +100,7 @@ export default defineUserConfig({
                     },
                     {
                         text: 'TODO',
-                        link: '/about/rodo.md',
+                        link: '/about/todo.md',
                         activeMatch: '/about/todo'
                     }
                 ]
