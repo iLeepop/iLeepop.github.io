@@ -8,6 +8,7 @@ export default defineUserConfig({
     head: [['link', { rel: 'icon', href: '/docs/icon/fav.png'}]],
     theme: defaultTheme({
         logo: '/icon/fav.png',
+        logoDark: '/icon/fav_w.png',
         navbar: [
             {
                 text: '看招',

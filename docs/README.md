@@ -1,7 +1,8 @@
 ---
 home: true
 title: 首页
-heroImage: /images/cury.png
+heroImage: /images/cry.png
+heroImageDark: /images/cry_w.png
 actions:
   - text: 看招吧
     link: /guide/
