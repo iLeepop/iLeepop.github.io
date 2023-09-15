@@ -94,8 +94,8 @@ export default defineUserConfig({
                 children: [
                     {
                         text: '更新日志',
-                        link: '/logs/logs.md',
-                        activeMatch: '/logs/logs.html'
+                        link: '/about/logs.md',
+                        activeMatch: '/about/logs.html'
                     }
                 ]
             },
@@ -196,11 +196,14 @@ export default defineUserConfig({
                     ]
                 }
             ],
-            '/logs/': [
+            '/about/': [
                 {
                     text: '更新日志',
-                    link: '/logs/logs.md',
-                    children: []
+                    link: '/about/logs.md'
+                },
+                {
+                    text: 'TODO',
+                    link: '/about/todo.md'
                 }
             ]
         },
