@@ -1,116 +1,6 @@
----
-lang: zh-CN
-title: Docker
-description: Docker Description
-siderbar: "auto"
-sidebarDepth: 3
----
+# Docker 命令
 
-# Docker
-
-## 简介
-
-## 用途
-
-## Docker 系统架构
-
-## Docker 引擎架构
-
-### 安装
-
-### 启停命令
-
-### 卸载
-
-## 镜像
-
-### 简介
-
-### 镜像仓库
-
-### 自动化镜像
-
-### 镜像分层
-
-### 镜像文件系统
-
-### 镜像摘要
-
-## 容器
-
-### 基础
-
-容器的存在意义就是为了其中的应用提供运行环境，容器运行就是为了运行其中的应用，让其中的应用对外提供服务。容器内应用运行完毕后，容器就会自动终止。
-
-### 容器创建并启动
-
-[docker run](#run-命令)用于创建并启动容器，同时会运行容器中指定的应用。这个指定的应用要么通过[docker run](#run-命令)中的[command]指定，要么通过容器的 Dockerfile 中的 CMD 指令指定。
-
-容器两种启动模式：交互模式 -it，分离模式 -d。
-
-### 容器启动流程与容器启动本质
-
-### 容器创建
-
-[docker create](#create-命令)命令仅用于创建一个容器，并不会启动容器。该命令没有-d 选项，因为[docker create](#create-命令)创建的容器默认都是以后台方式来运行的(必须通过[docker start](#start-命令) [容器]来启动)，除非在创建时指定 -it。
-
-### 容器退出
-
-- exit：退出并终止当进程。
-- ctrl+p+q：退出但不终止当前进程。
-
-### 容器状态查看
-
-[docker ps](#ps-命令)命令中 -a, -q, -l, -n。
-
-### 容器再进
-
-[docker exec](#exec-命令)与[docker attach](#attach-命令)的区别与联系
-
-[docker exec](#exec-命令)会创建一个新进程来访问进程，一般与 -it 选项联用，一般使用 exit 命令退出并终止当前进程。
-
-[docker attach](#attach-命令)不会创建新进程，而是将标准输入与标准输出直接附着在容器进程之上(使用户可以通过键盘来操作容器，使容器中的输出可通过显示器展示给用户)，一般不使用选项。但需要考虑退出容器的方式是使用 exit 还是 ctrl+p+q。
-
-### 容器内进程查看
-
-[docker top](#top-命令)命令后可携带 ps 命令的选项。
-
-### 容器日志查看
-
-[docker logs](#logs-命令)查看的是容器中应用运行日志。这个应用是根据容器创建时命令([docker run](#run-命令)或者[docker create](#create-命令))中的[command]指定，或通过容器镜像的 Dockerfile 中的 CMD 指令指定。
-
-### 容器启停
-
-[docker start](#start-命令)启动的是容器本身，但容器在启动的同时会启动一个应用，而这个应用是根据容器创建时命令中的[command]指定，或通过容器镜像的 Dockerfile 中的 CMD 指令指定。
-
-容器停止命令停止的是容器本身，但在容器停止之前会先停止容器中的所有进程的运行，也就停止了对外提供服务的应用进程。
-
-[docker pause](#pause-命令)仅暂停的是容器对外提供的服务，容器本身没有停止运行，所以容器中的应用也就没有停止运行，只不过其不能通过容器再对外提供服务了。
-
-### 容器删除
-
-[docker rm](#rm-命令)进行容器删除，选项 -f 进行强制删除。
-
-[docker rmi](#rmi-命令)进行镜像删除，选项 -f 进行强制删除，镜像的强制删除不会强制删除 UP 状态的容器的镜像。
-
-### 容器与宿主机文件传递
-
-- 理解容器本身就是一个文件系统
-- 理解[docker cp](#cp-命令)就是用于完成从一个文件系统复制到另一个文件系统的操作，与容器是否运行无关
-- 了解[docker cp](#cp-命令)不支持容器间的文件复制
-
-### 提交容器为镜像
-
-- [docker commit](#commit-命令)生成的镜像中包含容器的原镜像的所有分层信息包括历史记录
-
-### 容器的导入导出
-
-- 理解[容器镜像的导入导出对比](#容器镜像的导入导出对比)
-- 理解 docker export 是对镜像分层合并后视图的文件系统快照的导出，仅包含合并后的一层镜像信息，不包含原镜像分层历史记录。
-
-## Docker 命令
-
-### 所有命令
+## 所有命令
 
 ```bash
 docker --help
@@ -198,7 +88,7 @@ Run 'docker COMMAND --help' for more information on a command.
 For more help on how to use Docker, head to https://docs.docker.com/go/guides/
 ```
 
-### pull 命令
+## pull 命令
 
 ```bash
 docker pull --help
@@ -218,7 +108,7 @@ Options:
   -q, --quiet                   Suppress verbose output
 ```
 
-### images 命令
+## images 命令
 
 ```bash
 docker images --help
@@ -249,7 +139,7 @@ Options:
   -q, --quiet           Only show image IDs
 ```
 
-### search 命令
+## search 命令
 
 ```bash
 docker search --help
@@ -265,7 +155,7 @@ Options:
       --no-trunc        Don't truncate output
 ```
 
-### rmi 命令
+## rmi 命令
 
 ```bash
 docker rmi --help
@@ -282,7 +172,7 @@ Options:
       --no-prune   Do not delete untagged parents
 ```
 
-### run 命令
+## run 命令
 
 ```bash
 docker run --help
@@ -407,7 +297,7 @@ Options:
   -w, --workdir string                 Working directory inside the container
 ```
 
-### 以交互的方式运行容器
+## 以交互的方式运行容器
 
 [option]:-it 即为选择交互方式运行
 
@@ -415,27 +305,27 @@ Options:
 docker run [options] -it image [command] [args]
 ```
 
-#### ubuntu
+### ubuntu
 
 ```bash
 docker run --name myubuntu -it ubuntu /bin/bas
 ```
 
-#### tomcat
+### tomcat
 
 ```bash
 docker run --name mytomcat -it tomcat[:tag]
 ```
 
-### 以分离模式运行容器
+## 以分离模式运行容器
 
-#### tomcat
+### tomcat
 
 ```bash
 docker run [options] -dp 80:8080 tomcat[:tag]
 ```
 
-### start 命令
+## start 命令
 
 ```bash
 docker start --help
@@ -453,7 +343,7 @@ Options:
   -i, --interactive          Attach container's STDIN
 ```
 
-### restart 命令
+## restart 命令
 
 ```bash
 docker restart --help
@@ -470,7 +360,7 @@ Options:
   -t, --time int        Seconds to wait before killing the container
 ```
 
-### create 命令
+## create 命令
 
 ```bash
 docker create --help
@@ -611,7 +501,7 @@ Options:
   -w, --workdir string                 Working directory inside the container
 ```
 
-### ps 命令
+## ps 命令
 
 ```bash
 docker ps --help
@@ -642,7 +532,7 @@ Options:
   -s, --size            Display total file sizes
 ```
 
-### exec 命令
+## exec 命令
 
 生成副本去操作容器，退出不影响容器运行
 
@@ -670,7 +560,7 @@ Options:
   -w, --workdir string       Working directory inside the container
 ```
 
-### attach 命令
+## attach 命令
 
 同步输入输出流到容器，退出时也会结束容器进程
 
@@ -692,7 +582,7 @@ Options:
                              (default true)
 ```
 
-### top 命令
+## top 命令
 
 ```bash
 docker top --help
@@ -705,7 +595,7 @@ Aliases:
   docker container top, docker top
 ```
 
-### pause 命令
+## pause 命令
 
 ```bash
 docker pause --help
@@ -718,7 +608,7 @@ Aliases:
   docker container pause, docker pause
 ```
 
-### unpause 命令
+## unpause 命令
 
 ```bash
 docker unpause --help
@@ -731,7 +621,7 @@ Aliases:
   docker container unpause, docker unpause
 ```
 
-### stop 命令
+## stop 命令
 
 ```bash
 docker stop --help
@@ -748,7 +638,7 @@ Options:
   -t, --time int        Seconds to wait before killing the container
 ```
 
-### kill 命令
+## kill 命令
 
 ```bash
 docker kill --help
@@ -764,7 +654,7 @@ Options:
   -s, --signal string   Signal to send to the container
 ```
 
-### logs 命令
+## logs 命令
 
 ```bash
 docker logs --help
@@ -790,7 +680,7 @@ Options:
                        for 42 minutes)
 ```
 
-### cp 命令
+## cp 命令
 
 ```bash
 docker cp --help
@@ -816,7 +706,7 @@ Options:
                       is attached
 ```
 
-### rm 命令
+## rm 命令
 
 ```bash
  docker rm --help
@@ -834,7 +724,7 @@ Options:
   -v, --volumes   Remove anonymous volumes associated with the container
 ```
 
-### inspect 命令
+## inspect 命令
 
 ```bash
 docker inspect --help
@@ -855,7 +745,7 @@ Options:
       --type string     Return JSON for specified type
 ```
 
-### commit 命令
+## commit 命令
 
 ```bash
 docker commit --help
@@ -875,7 +765,7 @@ Options:
   -p, --pause            Pause container during commit (default true)
 ```
 
-### save 命令
+## save 命令
 
 ```bash
 docker save --help
@@ -891,7 +781,7 @@ Options:
   -o, --output string   Write to a file, instead of STDOUT
 ```
 
-### load 命令
+## load 命令
 
 ```bash
 docker load --help
@@ -908,11 +798,11 @@ Options:
   -q, --quiet          Suppress the load output
 ```
 
-### 导入导出镜像命令
+## 导入导出镜像命令
 
-#### 详解
+### 详解
 
-### export 命令
+## export 命令
 
 ```bash
 docker export --help
@@ -928,7 +818,7 @@ Options:
   -o, --output string   Write to a file, instead of STDOUT
 ```
 
-### import 命令
+## import 命令
 
 ```bash
 docker import --help
@@ -946,31 +836,31 @@ Options:
       --platform string   Set platform if server is multi-platform capable
 ```
 
-### 导入导出容器命令
+## 导入导出容器命令
 
-#### 详解
+### 详解
 
-#### 容器镜像的导入导出对比
+### 容器镜像的导入导出对比
 
-##### export/save
+#### export/save
 
 - export 作用于容器，save 作用于镜像，但是导出文件都为 tar 文件
 - export 一次只能导出一个容器，save 一次可以对多个镜像进行导出
 - export 只是对当前容器的文件系统快照进行导出，其会丢失原镜像的所有历史记录和元数据信息，save 则是保存了原镜像的完整记录
 
-##### import/load
+#### import/load
 
 - import 导入的是容器包；load 加载的是镜像包，但是最终都会恢复成镜像
 - import 恢复的镜像只包含当前镜像一层,镜像分层合并层；load 恢复的镜像与原镜像是完全相同的，镜像分层信息一致
 - import 恢复的镜像就是新构建的镜像，与原镜像的 ImageID 不同；load 恢复的镜像与原镜像是同一个镜像，即 ImageID 相同
 - import 可以导入的镜像指定 repository 与 tag，load 加载的镜像不能指定，于原镜像相同
 
-##### export&import/commit
+#### export&import/commit
 
 - 相同点：export + import 会将一个容器变为一个镜像，commit 也可以
 - 不同点：export + import 恢复的镜像仅包含原容器生成的一层分层，commit 生成的镜像中包含容器的原镜像的所有分层信息
 
-### history 命令
+## history 命令
 
 ```bash
 docker history --help
@@ -1000,7 +890,7 @@ Options:
   -q, --quiet           Only show image IDs
 ```
 
-### system 命令 | 命令集
+## system 命令 | 命令集
 
 ```bash
 docker system COMMAND --help
@@ -1020,7 +910,7 @@ Run 'docker system COMMAND --help' for more information on a command.
 
 重点理解 prune 命令
 
-#### df
+### df
 
 ```bash
 docker system df --help
@@ -1044,7 +934,7 @@ Options:
   -v, --verbose         Show detailed information on space usage
 ```
 
-#### events
+### events
 
 ```bash
 docker system events --help
@@ -1063,7 +953,7 @@ Options:
       --until string    Stream events until this timestamp
 ```
 
-#### info
+### info
 
 ```bash
 docker system info --help
@@ -1085,7 +975,7 @@ Options:
                         templates
 ```
 
-#### prune
+### prune
 
 重点
 
@@ -1103,7 +993,7 @@ Options:
       --volumes         Prune volumes
 ```
 
-### build 命令
+## build 命令
 
 ```bash
 docker build --help
@@ -1173,7 +1063,7 @@ Options:
       --ulimit ulimit                 Ulimit options (default [])
 ```
 
-### tag 命令
+## tag 命令
 
 ```bash
 docker tag --help
@@ -1184,210 +1074,4 @@ Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 
 Aliases:
   docker image tag, docker tag
-```
-
-## Dockerfile
-
-### 简介
-
-Dockerfile 是用于构建 Docker 镜像的脚本文件，有一系列指令构成。通过 docker build 命令构建镜像时，Dockerfile 的指令会由上到下依次进行，每条指令都将会构建出一个镜像。这就是镜像的分层，因此，指令越多，层次越多，创建的镜像就越多，效率就会变低，所以在定义 Dockerfile 时，能在一个指令完成的动作就不要分成两条。
-
-### 简单构建
-
-首先安装一下 C、C++的编译器
-
-```bash
-yum install -y gcc gcc-c++
-```
-
-待安装好后，还需要安装静态库
-
-```bash
-yum install -y glibc-static
-```
-
-编写 hello.c 文件
-
-```bash
-mkdir hw
-cd hw
-vim hello.c
-//进入编辑
-```
-
-```c
-#include<stdio.h>
-int main()
-{
-    printf("hello world!");
-    return 0;
-}
-```
-
-随后需要编译一下
-
-```bash
-gcc --static -o hello hello.c
-```
-
-编写 Dockerfile 文件
-
-```bash
-vim Dockerfile
-```
-
-```dockerfile
-FROM scratch
-ADD hello /
-CMD ["/hello"]
-```
-
-```bash
-//build镜像
-docker build -t hello-my .
-//查看镜像
-docker images
-//run镜像
-docker run hello-my
-```
-
-构建多个镜像
-
-```bash
-docker build -t hm:2.0 -t hm:3.0 -t hm:4.0 .
-```
-
-### scratch 镜像
-
-了解一个特殊镜像 scratch。它本身是一个空镜像，但它是所有镜像的 base Image，相当于面向对象编程中的 Object 类，scratch 镜像只能在 Dockerfile 中被继承，不能使用其它命令操作，例如不能 pull，run 以及 tag 等等。
-
-它也不会去生成镜像中的文件系统层。在 Docker 中，scratch 是一个保留字段，用户不能使用其作为自己的镜像名称使用。
-
-### 构建自己的 CentOS 镜像
-
-```bash
-mkdir cent
-cd cent
-vim Dockerfile
-```
-
-```dockerfile
-FROM centos:7
-MAINTAINER Ilee zihao02325@gmail.com
-LABEL version="1.0" description="this is a centos7 image created by Ilee"
-
-ENV WORKPATH /usr/local
-WORKDIR $WORKPATH
-
-RUN yum install -y wget vim net-tools
-CMD /bin/bash
-```
-
-```bash
-docker build -t ileecentos:1.0 .
-docker images
-docker run --name ileecentos -it ileecentos:1.0
-```
-
-## Dockerfile 指令
-
-- 通常指令以大写形式出现，以便区别于其它参数
-- 指令后至少携带一个参数
-- #出现在一行的最开端，代表是 comment 注释
-
-### FROM
-
-```dockerfile
-Usage: FROM <image>[:<tag>]
-# 用于指定基础镜像，且必须是第一条指令。
-```
-
-### MAINTAINER
-
-```dockerfile
-Usage: MAINTAINER <name>
-# 该指令的参数填写一般是维护者姓名和信箱。不过，该指令官方已不建议使用，而是使用LABEL指令代替。
-```
-
-### LABEL
-
-```dockerfile
-Usage: LABEL <key>=<value> <key>=<value> ......
-# 该指令可以通过以键值对的方式包含任意镜像的元数据信息，用于代替MAINTAINER指令。通过docker inspect可以查看到LABEL于MAINTAINER的内容。
-```
-
-### ENV
-
-```dockerfile
-Usage1: ENV <key> <value>
-# 用于指定环境变量，这些环境变量，后续可以被RUN指令使用，容器运行起来之后。也可以在容器中获取这些环境变量。
-Usage2: ENV <key1>=<value1> <key2>=<value2>
-# 可以设置多个变量，每个变量为一对<key>=<value>指定。
-```
-
-### WORKDIR
-
-```dockerfile
-Usage: WORKDIR path
-# 容器打开后默认进入的目录，一般在后续的RUN、CMD、ENTRYPOINT、ADD等指令中会引用该目录，可以设置多个WORKDIR指令。后续WORKDIR指令若用的是相对路径，则会基于之前WORKDIR指令指定的路径。在使用docker run运行容器时，可以通过-w参数覆盖构建时所设置的工作目录。
-```
-
-### RUN
-
-```dockerfile
-Usage1: RUN <command>
-# 这里的<command>就是shell命令。docker build执行过程中，会使用shell运行指定的command。
-Usage2: RUN ["EXECUTABLE","PARAM1","PARAM2",...]
-# 在docker build执行过程中，会调用第一个参数"EXECUTABLE"指定的应用程序运行，并使用后面第二、第三等参数作为应用程序的运行参数。
-```
-
-### CMD
-
-```dockerfile
-Usage1: CMD ["EXECUTABLE","PARAM1","PARAM2",...]
-# 在容器启动后，即在执行完docker run后会立即调用执行"EXECUTABLE"指定的可执行文件，并使用后面第二、第三等参数作为应用程序的运行参数。
-Usage2: CMD command param1 param2
-# 这里的command就是shell命令。在容器启动后会立即执行指定的shell命令。
-```
-
-### ENTRYPOINT
-
-```dockerfile
-Usage: ENTRYPOINT
-```
-
-### EXPOSE
-
-```dockerfile
-Usage: EXPOSE
-```
-
-### ARG
-
-```dockerfile
-Usage: ARG
-```
-
-### ADD
-
-```dockerfile
-Usage: ADD
-```
-
-### COPY
-
-```### WORKDIR
-Usage: COPY
-```
-
-### ONBUILD
-
-```### WORKDIR
-Usage: ONBUILD
-```
-
-### VOLUME
-
-```dockerfile
-Usage: VOLUME
 ```

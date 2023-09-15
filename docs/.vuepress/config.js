@@ -22,18 +22,13 @@ export default defineUserConfig({
                         children: [
                             {
                                 text: 'Java',
-                                link: '/group/dev/java.md',
-                                activeMatch: '/group/dev/java.html'
-                            },
-                            {
-                                text: 'Spring',
-                                link: '/group/dev/spring.md',
-                                activeMatch: '/group/dev/spring.html'
+                                link: '/group/dev/java/',
+                                activeMatch: '/group/dev/java/'
                             },
                             {
                                 text: 'JavaScript',
-                                link: '/group/dev/javascript.md',
-                                activeMatch: '/group/dev/javascript.html'
+                                link: '/group/dev/javascript/',
+                                activeMatch: '/group/dev/javascript/'
                             }
                         ]
                     },
@@ -42,18 +37,28 @@ export default defineUserConfig({
                         children: [
                             {
                                 text: 'Linux',
-                                link: '/group/ops/linux.md',
-                                activeMatch: '/group/ops/linux.html'
+                                link: '/group/ops/linux/',
+                                activeMatch: '/group/ops/linux/'
                             },
                             {
                                 text: 'Nginx',
-                                link: '/group/ops/nginx.md',
-                                activeMatch: '/group/ops/nginx.html'
+                                link: '/group/ops/nginx/',
+                                activeMatch: '/group/ops/nginx/'
                             },
                             {
                                 text: 'Docker',
-                                link: '/group/ops/docker.md',
-                                activeMatch: '/group/ops/docker.html'
+                                link: '/group/ops/docker/',
+                                activeMatch: '/group/ops/docker/'
+                            }
+                        ]
+                    },
+                    {
+                        text: 'Framework',
+                        children: [
+                            {
+                                text: 'Spring',
+                                link: '/group/fw/spring/',
+                                activeMatch: '/group/fw/spring/'
                             }
                         ]
                     }
@@ -68,17 +73,17 @@ export default defineUserConfig({
                             {
                                 text: 'DataPack数据包',
                                 link: '/game/mc/datapack.md',
-                                activeMatch: '/game/mc/datapack.html'
+                                activeMatch: '/game/mc/datapack'
                             },
                             {
                                 text: 'Fabric模组开发',
                                 link: '/game/mc/fabric.md',
-                                activeMatch: '/game/mc/fabric.html'
+                                activeMatch: '/game/mc/fabric'
                             },
                             {
                                 text: 'Server服务器',
                                 link: '/game/mc/server.md',
-                                activeMatch: '/game/mc/server.html'
+                                activeMatch: '/game/mc/server'
                             }
                         ]
                     },
@@ -99,7 +104,10 @@ export default defineUserConfig({
             '/guide/': [
                 {
                     text: '想要看？',
-                    children: ['/guide/', '/guide/demo.md']
+                    children: [
+                        '/guide/', 
+                        '/guide/demo.md'
+                    ]
                 }
             ],
             '/group/': [
@@ -107,29 +115,84 @@ export default defineUserConfig({
                     text: 'Dev',
                     collapsible: true,
                     children: [
-                        '/group/dev/java.md', 
-                        '/group/dev/spring.md', 
-                        '/group/dev/javascript.md'
+                        {
+                            text: 'Java',
+                            children: [
+                                '/group/dev/java/', 
+                            ]
+                        },
+                        {
+                            text: 'JavaScript',
+                            children: [
+                                '/group/dev/javascript/',
+                            ]
+                        }
                     ]
                 },
                 {
                     text: 'Ops',
                     collapsible: true,
                     children: [
-                        '/group/ops/linux.md', 
-                        '/group/ops/nginx.md', 
-                        '/group/ops/docker.md'
+                        {
+                            text: 'Linux',
+                            children: [
+                                '/group/ops/linux/', 
+                            ]
+                        },
+                        {
+                            text: 'Nginx',
+                            children: [
+                                '/group/ops/nginx/', 
+                            ]
+                        },
+                        {
+                            text: 'Docker',
+                            children: [
+                                '/group/ops/docker/',
+                                '/group/ops/docker/dockerImage.md',
+                                '/group/ops/docker/dockerContainer.md',
+                                '/group/ops/docker/dockerCommand.md',
+                                '/group/ops/docker/Dockerfile.md',
+                            ]
+                        }
                     ]
                 },
+                {
+                    text: 'Framework',
+                    collapsible: true,
+                    children: [
+                        {
+                            text: 'Spring',
+                            children: [
+                                '/group/fw/spring/', 
+                            ]
+                        }
+                    ]
+                }
             ],
             '/game/': [
                 {
                     text: 'Minecraft',
                     collapsible: true,
                     children: [
-                        '/game/mc/datapack.md',
-                        '/game/mc/fabric.md',
-                        '/game/mc/server.md',
+                        {
+                            text: 'DataPack',
+                            children: [
+                                '/game/mc/datapack.md',
+                            ]
+                        },
+                        {
+                            text: 'Fabric Mod',
+                            children: [
+                                '/game/mc/fabric.md',
+                            ]
+                        },
+                        {
+                            text: 'Server',
+                            children: [
+                                '/game/mc/server.md',
+                            ]
+                        }
                     ]
                 }
             ],
