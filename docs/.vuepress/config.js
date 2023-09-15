@@ -96,7 +96,12 @@ export default defineUserConfig({
                     {
                         text: '更新日志',
                         link: '/about/logs.md',
-                        activeMatch: '/about/logs.html'
+                        activeMatch: '/about/logs'
+                    },
+                    {
+                        text: 'TODO',
+                        link: '/about/rodo.md',
+                        activeMatch: '/about/todo'
                     }
                 ]
             },
