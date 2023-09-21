@@ -176,13 +176,15 @@ Usage2: ENTRYPOINT command param1 param2 ...
 ### EXPOSE
 
 ```dockerfile
-Usage: EXPOSE
+Usage: EXPOSE <port> [<port>...]
+# 指定容器准备对外暴露的端口号，但该端口号并不会真正对外暴露。若要真正对外暴露，则需要在执行docker run命令时使用-p(小p)来指定真正暴露出去的端口号。
 ```
 
 ### ARG
 
 ```dockerfile
-Usage: ARG
+Usage: ARG <varname>[=<default value>]
+# 定义一个变量，该变量会将使用于镜像构建运行时，若要定义多个变量，则需要定义多个ARG指令。
 ```
 
 ### ADD
@@ -203,14 +205,50 @@ Usage2: COPY ["<src>","<dest>"]
 
 ### ONBUILD
 
-```### WORKDIR
-Usage: ONBUILD
+```docker
+Usage: ONBUILD [INSTRUCTION]
+# 该指令用于指定当前镜像的子镜像进行构建时要执行的指令。
 ```
 
 ### VOLUME
 
 ```dockerfile
-Usage: VOLUME
+Usage: VOLUME ["dir1","dir2",...]
+# 在容器创建可以挂载的数据卷。
 ```
 
 ### CMD 与 ENTRYPOINT 的区别以及使用
+
+## 应用发布
+
+## BuildCache
+
+**例如创建以下 Dockerfile 文件**
+
+```dockerfile
+FROM centos:7
+LABEL auth="Ilee"
+COPY hello.log /var/log/
+RUN yum -y install vim
+CMD /bin/bash
+```
+
+### 镜像生成过程
+
+Docker 镜像构建过程大量应用了镜像间的父子关系。即下层镜像是上层镜像的父镜像出现，下下层镜像是作为上层镜像的输入出现；上层镜像是在下层镜像的基础上变化而来的。下面将针对上面的例子逐条指令的分析镜像的构建过程。
+
+#### **FROM centos:7**
+
+FROM 指令是 Dockerfile 中唯一的不可缺少的指令，它为最终构建出的镜像设定了一个基础镜像 Base Image。该语句并不会产生新的镜像层，它是使用指定的镜像作为基础镜像层的。
+
+#### **LABEL auth="Ilee"**
+
+#### **COPY hello.log /var/log/**
+
+#### **RUN yum -y install vim**
+
+#### **CMD /bin/bash**
+
+### BuildCache 机制
+
+### BuildCache 失效

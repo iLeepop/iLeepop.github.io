@@ -159,6 +159,8 @@ export default defineUserConfig({
                                 '/group/ops/docker/dockerContainer.md',
                                 '/group/ops/docker/dockerCommand.md',
                                 '/group/ops/docker/Dockerfile.md',
+                                '/group/ops/docker/dockerDataPersistence.md',
+                                '/group/ops/docker/dockerNetwork.md',
                             ]
                         }
                     ]
