@@ -155,6 +155,7 @@ export default defineUserConfig({
                             text: 'Docker',
                             children: [
                                 '/group/ops/docker/',
+                                '/group/ops/docker/dockerEngine.md',
                                 '/group/ops/docker/dockerImage.md',
                                 '/group/ops/docker/dockerContainer.md',
                                 '/group/ops/docker/dockerCommand.md',
