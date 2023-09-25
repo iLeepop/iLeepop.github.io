@@ -10,7 +10,7 @@ sidebarDepth: 3
 Docker 是一个开源的应用容器 Container 引擎， 其可以让开发者将应用及应用运行的 环境打包到一个轻量级、可移植的镜像中，然后发布到任何流行的 Linux、Windows 机器上。 Docker 原本是由一个 PaaS 提供商 dotCloud 公司的创始人 Solomon Hykes 发起的一个内 部项目，是基于其多年云服务技术的一次革新，使用 Go 语言开发。2013 年 3 月开源，并 在 GitHub 上进行维护。后由于 Docker 项目的火爆，2013 年底，dotCloud 公司更名为 Docker， 公司域名也变更为了 https://docker.com。
 
 ::: tip
-**云计算中的服务包括三个层次：**IaaS、PaaS、SaaS。
+**云计算中的服务包括三个层次** IaaS、PaaS、SaaS。
 :::
 
 **Docker LOGO 的由来**

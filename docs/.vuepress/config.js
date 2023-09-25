@@ -62,6 +62,16 @@ export default defineUserConfig({
                                 activeMatch: '/group/fw/spring/'
                             }
                         ]
+                    },
+                    {
+                        text: 'Protocol',
+                        children: [
+                            {
+                                text: 'HTTP/HTTPS',
+                                link: '/group/protocol/http.md',
+                                activeMatch: '/group/protocol/http'
+                            }
+                        ]
                     }
                 ]
             },
@@ -162,6 +172,7 @@ export default defineUserConfig({
                                 '/group/ops/docker/Dockerfile.md',
                                 '/group/ops/docker/dockerDataPersistence.md',
                                 '/group/ops/docker/dockerNetwork.md',
+                                '/group/ops/docker/dockerCompose.md',
                             ]
                         }
                     ]
@@ -175,6 +186,16 @@ export default defineUserConfig({
                             children: [
                                 '/group/fw/spring/', 
                             ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Protocol',
+                    collapsible: true,
+                    children: [
+                        {
+                            text: 'HTTP/HTTPS',
+                            link: '/group/protocol/http.md'
                         }
                     ]
                 }
