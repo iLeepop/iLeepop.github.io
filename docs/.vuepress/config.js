@@ -195,7 +195,9 @@ export default defineUserConfig({
                     children: [
                         {
                             text: 'HTTP/HTTPS',
-                            link: '/group/protocol/http.md'
+                            children: [
+                                '/group/protocol/http.md'
+                            ]
                         }
                     ]
                 }
