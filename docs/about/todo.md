@@ -4,8 +4,7 @@
 
 ### 事项内容
 
-- [ ] 基本完成 Docker 文档 未完成
-
-### Deadline
-
-:alarm_clock: **23-09-30**
+- [x] 基本完成 Docker 文档
+- [ ] 基本完成 Linux 文档
+- [ ] 基本完成 Sql 文档
+- [ ] 基本完成 Nginx 文档

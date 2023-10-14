@@ -30,6 +30,11 @@ export default defineUserConfig({
                                 text: 'JavaScript',
                                 link: '/group/dev/javascript/',
                                 activeMatch: '/group/dev/javascript/'
+                            },
+                            {
+                                text: 'Sql',
+                                link: '/group/dev/sql/',
+                                activeMatch: '/group/dev/sql/'
                             }
                         ]
                     },
@@ -133,14 +138,23 @@ export default defineUserConfig({
                     children: [
                         {
                             text: 'Java',
+                            collapsible: true,
                             children: [
                                 '/group/dev/java/', 
                             ]
                         },
                         {
                             text: 'JavaScript',
+                            collapsible: true,
                             children: [
                                 '/group/dev/javascript/',
+                            ]
+                        },
+                        {
+                            text: 'Sql',
+                            collapsible: true,
+                            children: [
+                                '/group/dev/sql/',
                             ]
                         }
                     ]
@@ -151,18 +165,29 @@ export default defineUserConfig({
                     children: [
                         {
                             text: 'Linux',
+                            collapsible: true,
                             children: [
                                 '/group/ops/linux/', 
+                                '/group/ops/linux/linuxInstall.md',
+                                '/group/ops/linux/linuxStartProcess.md',
+                                '/group/ops/linux/linuxDirectoryStructure.md',
+                                '/group/ops/linux/linuxFileBaseAttribute.md',
+                                '/group/ops/linux/linuxUserAndGroup.md',
+                                '/group/ops/linux/linuxDiskManage.md',
+                                '/group/ops/linux/linuxViVim.md',
+                                '/group/ops/linux/linuxYumApt.md',
                             ]
                         },
                         {
                             text: 'Nginx',
+                            collapsible: true,
                             children: [
                                 '/group/ops/nginx/', 
                             ]
                         },
                         {
                             text: 'Docker',
+                            collapsible: true,
                             children: [
                                 '/group/ops/docker/',
                                 '/group/ops/docker/dockerEngine.md',
@@ -173,6 +198,7 @@ export default defineUserConfig({
                                 '/group/ops/docker/dockerDataPersistence.md',
                                 '/group/ops/docker/dockerNetwork.md',
                                 '/group/ops/docker/dockerCompose.md',
+                                '/group/ops/docker/dockerCommonServers.md',
                             ]
                         }
                     ]
@@ -241,7 +267,7 @@ export default defineUserConfig({
         },
         sidebarDepth: 3,
         contributorsText: '贡献者',
-        lastUpdatedText: '最后一次更新',
+        // lastUpdatedText: '最后一次更新',
         notFound: [
             '爸爸去哪了？', 
             '虚空乱流！', 
