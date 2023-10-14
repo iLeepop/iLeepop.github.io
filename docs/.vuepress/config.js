@@ -268,6 +268,7 @@ export default defineUserConfig({
         sidebarDepth: 3,
         contributorsText: '贡献者',
         // lastUpdatedText: '最后一次更新',
+        lastUpdated: false,
         notFound: [
             '爸爸去哪了？', 
             '虚空乱流！', 
