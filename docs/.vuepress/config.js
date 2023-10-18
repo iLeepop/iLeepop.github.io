@@ -183,6 +183,14 @@ export default defineUserConfig({
                             collapsible: true,
                             children: [
                                 '/group/ops/nginx/', 
+                                '/group/ops/nginx/nginxInstall.md',
+                                '/group/ops/nginx/nginxAntiTheft.md',
+                                '/group/ops/nginx/nginxGZIP.md',
+                                '/group/ops/nginx/nginxBrotli.md',
+                                '/group/ops/nginx/nginxReverseProxy.md',
+                                '/group/ops/nginx/nginxSSL.md',
+                                '/group/ops/nginx/nginxServerLoadBalance.md',
+                                '/group/ops/nginx/nginxDynamicStatic.md',
                             ]
                         },
                         {
