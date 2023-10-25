@@ -191,6 +191,8 @@ export default defineUserConfig({
                                 '/group/ops/nginx/nginxSSL.md',
                                 '/group/ops/nginx/nginxServerLoadBalance.md',
                                 '/group/ops/nginx/nginxDynamicStatic.md',
+                                '/group/ops/nginx/nginxConcatReq.md',
+                                '/group/ops/nginx/nginxRateLimit.md',
                             ]
                         },
                         {
