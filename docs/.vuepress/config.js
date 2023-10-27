@@ -55,6 +55,11 @@ export default defineUserConfig({
                                 text: 'Docker',
                                 link: '/group/ops/docker/',
                                 activeMatch: '/group/ops/docker/'
+                            },
+                            {
+                                text: 'Git',
+                                link: '/group/ops/git/',
+                                activeMatch: '/group/ops/git/'
                             }
                         ]
                     },
@@ -148,6 +153,8 @@ export default defineUserConfig({
                             collapsible: true,
                             children: [
                                 '/group/dev/javascript/',
+                                '/group/dev/javascript/jsUsed.md',
+                                '/group/dev/javascript/jsValue.md',
                             ]
                         },
                         {
@@ -209,6 +216,13 @@ export default defineUserConfig({
                                 '/group/ops/docker/dockerNetwork.md',
                                 '/group/ops/docker/dockerCompose.md',
                                 '/group/ops/docker/dockerCommonServers.md',
+                            ]
+                        },
+                        {
+                            text: 'Git',
+                            collapsible: true,
+                            children: [
+                                '/group/ops/git/',
                             ]
                         }
                     ]
