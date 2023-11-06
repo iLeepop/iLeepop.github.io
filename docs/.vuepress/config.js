@@ -35,7 +35,13 @@ export default defineUserConfig({
                                 text: 'Sql',
                                 link: '/group/dev/sql/',
                                 activeMatch: '/group/dev/sql/'
+                            },
+                            {
+                                text: 'TypeScript',
+                                link: '/group/dev/typescript/',
+                                activeMatch: '/group/dev/typescript/'
                             }
+                            
                         ]
                     },
                     {
@@ -70,6 +76,11 @@ export default defineUserConfig({
                                 text: 'Spring',
                                 link: '/group/fw/spring/',
                                 activeMatch: '/group/fw/spring/'
+                            },
+                            {
+                                text: 'React',
+                                link: '/group/fw/react/',
+                                activeMatch: '/group/fw/react/'
                             }
                         ]
                     },
@@ -163,6 +174,14 @@ export default defineUserConfig({
                             children: [
                                 '/group/dev/sql/',
                             ]
+                        },
+                        {
+                            text: 'TypeScript',
+                            collapsible: true,
+                            children: [
+                                '/group/dev/typescript/',
+                                '/group/dev/typescript/tsStart.md',
+                            ]
                         }
                     ]
                 },
@@ -235,6 +254,14 @@ export default defineUserConfig({
                             text: 'Spring',
                             children: [
                                 '/group/fw/spring/', 
+                            ]
+                        },
+                        {
+                            text: 'React',
+                            children: [
+                                '/group/fw/react/', 
+                                '/group/fw/react/start.md',
+                                '/group/fw/react/base.md',
                             ]
                         }
                     ]
