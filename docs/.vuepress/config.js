@@ -5,7 +5,7 @@ export default defineUserConfig({
     lang: 'zh-CN',
     title: 'Ilee-Docs',
     description: '欢迎查看我的技术文档',
-    head: [['link', { rel: 'icon', href: '/docs/icon/fav.png'}]],
+    head: [['link', { rel: 'icon', href: '/docs/icon/fav.png' }]],
     theme: defaultTheme({
         logo: '/icon/fav.png',
         logoDark: '/icon/fav_w.png',
@@ -35,13 +35,7 @@ export default defineUserConfig({
                                 text: 'Sql',
                                 link: '/group/dev/sql/',
                                 activeMatch: '/group/dev/sql/'
-                            },
-                            {
-                                text: 'TypeScript',
-                                link: '/group/dev/typescript/',
-                                activeMatch: '/group/dev/typescript/'
                             }
-                            
                         ]
                     },
                     {
@@ -61,11 +55,6 @@ export default defineUserConfig({
                                 text: 'Docker',
                                 link: '/group/ops/docker/',
                                 activeMatch: '/group/ops/docker/'
-                            },
-                            {
-                                text: 'Git',
-                                link: '/group/ops/git/',
-                                activeMatch: '/group/ops/git/'
                             }
                         ]
                     },
@@ -81,16 +70,6 @@ export default defineUserConfig({
                                 text: 'React',
                                 link: '/group/fw/react/',
                                 activeMatch: '/group/fw/react/'
-                            }
-                        ]
-                    },
-                    {
-                        text: 'Protocol',
-                        children: [
-                            {
-                                text: 'HTTP/HTTPS',
-                                link: '/group/protocol/http.md',
-                                activeMatch: '/group/protocol/http'
                             }
                         ]
                     }
@@ -142,7 +121,7 @@ export default defineUserConfig({
                 {
                     text: '想要看？',
                     children: [
-                        '/guide/', 
+                        '/guide/',
                         '/guide/demo.md'
                     ]
                 }
@@ -156,7 +135,7 @@ export default defineUserConfig({
                             text: 'Java',
                             collapsible: true,
                             children: [
-                                '/group/dev/java/', 
+                                '/group/dev/java/',
                             ]
                         },
                         {
@@ -166,6 +145,13 @@ export default defineUserConfig({
                                 '/group/dev/javascript/',
                                 '/group/dev/javascript/jsUsed.md',
                                 '/group/dev/javascript/jsValue.md',
+                            ]
+                        },
+                        {
+                            text: 'Node',
+                            collapsible: true,
+                            children: [
+                                '/group/dev/node/',
                             ]
                         },
                         {
@@ -193,7 +179,7 @@ export default defineUserConfig({
                             text: 'Linux',
                             collapsible: true,
                             children: [
-                                '/group/ops/linux/', 
+                                '/group/ops/linux/',
                                 '/group/ops/linux/linuxInstall.md',
                                 '/group/ops/linux/linuxStartProcess.md',
                                 '/group/ops/linux/linuxDirectoryStructure.md',
@@ -208,7 +194,7 @@ export default defineUserConfig({
                             text: 'Nginx',
                             collapsible: true,
                             children: [
-                                '/group/ops/nginx/', 
+                                '/group/ops/nginx/',
                                 '/group/ops/nginx/nginxInstall.md',
                                 '/group/ops/nginx/nginxAntiTheft.md',
                                 '/group/ops/nginx/nginxGZIP.md',
@@ -253,13 +239,13 @@ export default defineUserConfig({
                         {
                             text: 'Spring',
                             children: [
-                                '/group/fw/spring/', 
+                                '/group/fw/spring/',
                             ]
                         },
                         {
                             text: 'React',
                             children: [
-                                '/group/fw/react/', 
+                                '/group/fw/react/',
                                 '/group/fw/react/start.md',
                                 '/group/fw/react/base.md',
                             ]
@@ -274,6 +260,18 @@ export default defineUserConfig({
                             text: 'HTTP/HTTPS',
                             children: [
                                 '/group/protocol/http.md'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'other?',
+                    collapsible: true,
+                    children: [
+                        {
+                            text: 'CLI',
+                            children: [
+                                '/group/other/cli-node.md'
                             ]
                         }
                     ]
@@ -321,10 +319,10 @@ export default defineUserConfig({
         // lastUpdatedText: '最后一次更新',
         lastUpdated: false,
         notFound: [
-            '爸爸去哪了？', 
-            '虚空乱流！', 
-            '前面的区域以后再来探索吧', 
-            '你没资格，没资格啊', 
+            '爸爸去哪了？',
+            '虚空乱流！',
+            '前面的区域以后再来探索吧',
+            '你没资格，没资格啊',
             '还在施工！'
         ],
         backToHome: '回去咯'
