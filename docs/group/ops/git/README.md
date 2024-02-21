@@ -22,7 +22,7 @@ git branch -a
 #
 ```
 
-**不能 push 到 github 了**
+**不能 ping 到 github 了**
 
 ```bash
 ping github.com
