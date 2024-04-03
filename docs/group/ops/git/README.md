@@ -32,3 +32,15 @@ ssh -Tv github.com
 # 去改 host
 ```
 
+**新机器配密钥**
+```bash
+// 创建密钥
+ssh-keygen -t rsa -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+// 查看配置
+git config --global --list
+// 修改邮箱和名称
+git config --global user.email "youremail@example.com"
+git config --global user.name "Your Name"
+// 将生成的公钥添加到 git 仓库
+```
