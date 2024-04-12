@@ -274,6 +274,12 @@ export default defineUserConfig({
                             children: [
                                 '/group/other/cli-node.md'
                             ]
+                        },
+                        {
+                            text: 'Embedded',
+                            children: [
+                                '/group/other/raspberryPi.md'
+                            ]
                         }
                     ]
                 }
