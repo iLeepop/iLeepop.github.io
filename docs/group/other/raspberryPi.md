@@ -43,3 +43,42 @@
 **参考链接**
 - https://segmentfault.com/a/1190000039023480?utm_source=sf-similar-article
 - https://forums.raspberrypi.com/viewtopic.php?p=2146820
+
+
+## 服务自启动
+### SYSTEMD 配置
+1. 创建`/lib/systemd/system/`目录，并在其中创建`xxx.service`文件，内容如下：
+```
+[Unit]
+Description=xxx
+After=network.target      # 需要等待网络服务启动
+[Service]
+Type=simple
+ExecStart=/usr/bin/xxx
+Restart=always
+[Install]
+WantedBy=multi-user.target
+```
+2. 执行`systemctl enable xxx.service`
+3. 执行`systemctl start xxx.service`
+4. 执行`systemctl status xxx.service`查看状态
+5. 执行`systemctl stop xxx.service`停止服务
+6. 执行`systemctl restart xxx.service`重启服务
+7. 执行`systemctl daemon-reload`重新加载配置文件
+8. 执行`systemctl list-units --type service`查看所有服务
+9. 执行`systemctl is-enabled xxx.service`查看服务是否开机启动
+10. 执行`systemctl enable xxx.service`将服务设置为开机启动
+11. 执行`systemctl disable xxx.service`将服务设置为不开机启动
+
+### init.d 目录配置
+1. 将脚本文件移动到`/etc/init.d`目录下
+2. 执行`chmod +x xxx.sh`给脚本文件添加执行权限
+3. 执行`update-rc.d xxx.sh defaults`将脚本文件添加到开机启动项中
+4. 执行`update-rc.d -f xxx.sh remove`将脚本文件从开机启动项中移除
+脚本文件需要添加启动配置信息，另外`init.d`脚本可以设置启动顺序。
+
+### .bashrc 配置
+1. 修改`/home/pi/.bashrc`, 在文件末尾添加命令文本
+
+### rc.local 配置
+1. 在`/etc/rc.local`加入想要启动的服务的启动命令，注意要在最后一行加上`exit 0`
