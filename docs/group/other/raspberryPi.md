@@ -82,3 +82,32 @@ WantedBy=multi-user.target
 
 ### rc.local 配置
 1. 在`/etc/rc.local`加入想要启动的服务的启动命令，注意要在最后一行加上`exit 0`
+
+## "kiosk mode" application
+就是类似于大厅服务台那种，就只能使用特定应用的服务，没有其它任何东西。
+再直白点就是，系统开启就只跑一个全屏应用以及其相应的服务。
+
+### 所需依赖
+- `xorg`
+- `openbox`
+- `lightdm`
+***`openbox`就是窗口管理器(Window Manager)，`lightdm`就是显示管理器(Display Manager)。***
+
+### 配置
+1. 启用自动登录
+  - `sudo nano /etc/lightdm/lightdm.conf`
+  - 找到`[SeatDefault]`或`[Seat:*]`
+  - 添加`autologin-user=pi` 配置项
+  - 添加`user-session=openbox` 配置项
+
+2. 添加自启动应用
+  - `touch ~/.config/openbox/autostart`
+  - `sudo nano ~/.config/openbox/autostart`
+  - 添加应用启动命令
+
+3. 开启树莓派桌面启动模式
+  - `sudo raspi-config`
+  - 选择`System Option` -> `Boot Behavior` -> `Desktop AutoLOGIN`
+  - 左右键选择`finish`
+
+重启查看效果
