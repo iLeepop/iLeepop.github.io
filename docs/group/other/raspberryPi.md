@@ -99,6 +99,7 @@ WantedBy=multi-user.target
   - 找到`[SeatDefault]`或`[Seat:*]`
   - 添加`autologin-user=pi` 配置项
   - 添加`user-session=openbox` 配置项
+  - 可选（消除鼠标光标）添加`xserver-command=X -nocursor -s 0 dpms` 配置项
 
 2. 添加自启动应用
   - `touch ~/.config/openbox/autostart`
@@ -111,3 +112,84 @@ WantedBy=multi-user.target
   - 左右键选择`finish`
 
 重启查看效果
+
+## pyqt-vlc
+
+### 主线：运行 PyQt 开机自启
+```bash
+# 发送代码
+scp xxx.zip pi@xxx.xxx.xxx.xxx:./
+
+# 配置 lightdm
+sudo nano /etc/lightdm/lightdm.conf
+# 取消掉注释并配置以下选项
+user-session=openbox
+autologin-user=pi
+
+# 创建 openbox 配置文件夹
+mkdir /home/pi/.config/openbox
+nano /home/pi/.config/openbox/autostart    # 在 autostart 中添加自己想要的命令行 必须以 & 结尾
+```
+
+可以使用 RPi 连接一个显示屏，SSH 远程连接 RPi，使用：
+```bash
+export DISPLAY=:0 && [your command]
+```
+
+**注意，必须添加 `export DISPLAY=:0` 否则 python 不知道向哪里输出图形**
+**其它命令或可执行文件，按情况使用**
+
+### 支线：检查前置工具
+***系统使用 bullseye 64bit lite***
+```bash
+python --version
+# 设置 apt 源
+sudo nano /etc/apt/source.list
+# 更新 apt
+sudo apt update
+# 安装 python3.9
+sudo apt install python3.9
+# 切换当前 python
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
+sudo update-alternatives --config python3
+# 检查是否更新完毕
+python --version
+# or
+python3 --version
+
+# 安装 pip
+sudo apt install python3-pip
+
+# 安装 pyqt5
+sudo apt install python3-pyqt5   # 这里因为该系统版本预装了 pyqt5
+
+# 安装 vlc
+pip install python-vlc
+sudo apt install vlc
+
+# 安装必要工具
+sudo apt install xorg lightdm openbox
+```
+
+### 支线：修改系统可以显示中文
+```bash
+# 安装 locales 工具
+sudo apt install locales
+
+# 配置语言环境
+sudo dpkg-reconfigure locales
+# 会弹出新界面， 上下键 以及 PageDown 和 PageUp 可以进行翻页，选择 zh_CN UTF8（根据个人情况选择）
+# 按空格选中，会出现星号标记， Enter 确认
+# 然后一路选择你要的语言首选项，最后重启登录
+
+# 这时候还不能显示中文字体
+# 安装中文字体包
+sudo apt-get install ttf-wqy-zenhei
+
+# 选装---输入法
+sudo apt-get install scim-pinyin
+
+# 配置 和上述一样
+sudo raspi-config
+# 重启
+```
