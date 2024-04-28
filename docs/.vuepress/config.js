@@ -189,6 +189,7 @@ export default defineUserConfig({
                                 '/group/ops/linux/linuxViVim.md',
                                 '/group/ops/linux/linuxYumApt.md',
                                 '/group/ops/linux/forgot.md',
+                                '/group/ops/linux/shell.md',
                             ]
                         },
                         {
