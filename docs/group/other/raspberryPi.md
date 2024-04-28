@@ -47,11 +47,12 @@
 
 ## 服务自启动
 ### SYSTEMD 配置
-1. 创建`/lib/systemd/system/`目录，并在其中创建`xxx.service`文件，内容如下：
+1. 创建`/lib/systemd/system/`目录，并在其中创建`xxx.service`文件，样例如下：
 ```
 [Unit]
 Description=xxx
-After=network.target      # 需要等待网络服务启动
+After=network.target          # 需要等待网络服务启动
+Requires=redis-server.service # 需要等待redis服务启动
 [Service]
 Type=simple
 ExecStart=/usr/bin/xxx
@@ -144,10 +145,10 @@ export DISPLAY=:0 && [your command]
 ```bash
 python --version
 # 设置 apt 源
-sudo nano /etc/apt/source.list
+sudo nano /etc/apt/sources.list
 # 更新 apt
 sudo apt update
-# 安装 python3.9
+# 安装 python3.9 有的没有 python3.9 必须源码安装 比较麻烦 尽量选择合适的系统版本
 sudo apt install python3.9
 # 切换当前 python
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
@@ -159,6 +160,10 @@ python3 --version
 
 # 安装 pip
 sudo apt install python3-pip
+
+# 配置 pip 源 有可能会失效 如若失效 自行搜索
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/
+pip config set install.trusted-host pypi.tuna.tsinghua.edu.cn
 
 # 安装 pyqt5
 sudo apt install python3-pyqt5   # 这里因为该系统版本预装了 pyqt5
@@ -192,4 +197,39 @@ sudo apt-get install scim-pinyin
 # 配置 和上述一样
 sudo raspi-config
 # 重启
+```
+
+### 支线：设置静态 IP 地址
+```bash
+# 打开树莓派设置
+sudo raspi-config
+
+# 将网络管理器切换为 Network Manager
+
+# 检查网络接口
+ip link
+
+# 编辑网络接口信息
+sudo nano /etc/network/interfaces
+
+# 根据下述内容修改后重新启动网络服务
+sudo systemctl restart NetworkManager.service
+
+# 查看 IP
+ip a
+```
+
+修改内容为
+```
+#
+auto lo
+iface lo inet loopback
+# 设置你的网口（这里为作者的网口名称
+auto eth0
+iface eth0 inet static
+address 192.168.1.7
+netmask 255.255.255.0
+gateway 192.168.1.1
+# 这里的 dns 看个人需求修改
+dns-nameservers 192.168.1.1 8.8.8.8
 ```
