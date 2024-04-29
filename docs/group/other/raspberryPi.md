@@ -39,6 +39,7 @@
   - 使用上传的文件替换`/usr/share/plymouth/themes/pix/splash.png`
 5. 进行到这一步，执行`reboot`重启，对于大部分设备已经成功了
 6. 对于部分`bookworm`设备，会出现，关机时正常显示设置的`Logo`，开机却不行，依旧显示`Welcome to Raspberry Pi`图片，此时需要执行`sudo plymouth-set-default-theme --rebuild-initrd pix`
+7. 消除鼠标`sudo nano /etc/lightdm/lightdm.conf`，修改`xserver-command=X -nocursor -s 0 dpms`
 
 **参考链接**
 - https://segmentfault.com/a/1190000039023480?utm_source=sf-similar-article
