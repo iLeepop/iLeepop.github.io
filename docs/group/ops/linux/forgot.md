@@ -66,3 +66,12 @@ systemctl disable [service]
 // 查看状态
 systemctl status [service]
 ```
+
+### ubuntu apt remove PKG
+```bash
+dpkg --list | grep package-name
+sudo apt-get remove package-name
+sudo apt-get purge package-name
+sudo apt-get autoremove
+sudo apt-get clean
+```
