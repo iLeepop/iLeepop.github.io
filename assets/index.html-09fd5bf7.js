@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-b7773702","path":"/group/dev/javascript/","title":"简介","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":2}]},"filePathRelative":"group/dev/javascript/README.md"}');export{a as data};

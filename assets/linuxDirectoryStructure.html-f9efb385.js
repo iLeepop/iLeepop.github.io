@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-7a5f4380","path":"/group/ops/linux/linuxDirectoryStructure.html","title":"目录结构","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":1}]},"filePathRelative":"group/ops/linux/linuxDirectoryStructure.md"}');export{t as data};

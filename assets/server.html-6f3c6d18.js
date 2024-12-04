@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-632a7ebe","path":"/game/mc/server.html","title":"简介","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":2}]},"filePathRelative":"game/mc/server.md"}');export{e as data};

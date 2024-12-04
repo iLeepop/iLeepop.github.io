@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-cb6f882a","path":"/group/ops/nginx/nginxDynamicStatic.html","title":"动静分离","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":1}]},"filePathRelative":"group/ops/nginx/nginxDynamicStatic.md"}');export{t as data};

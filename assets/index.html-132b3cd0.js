@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-f7a4c74a","path":"/group/ops/nginx/","title":"简介","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":2}]},"filePathRelative":"group/ops/nginx/README.md"}');export{a as data};

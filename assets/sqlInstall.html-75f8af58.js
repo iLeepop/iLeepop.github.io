@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-73801c30","path":"/group/dev/sql/sqlInstall.html","title":"安装","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":1}]},"filePathRelative":"group/dev/sql/sqlInstall.md"}');export{t as data};

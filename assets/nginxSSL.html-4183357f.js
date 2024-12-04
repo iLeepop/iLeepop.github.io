@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-54ed2b8c","path":"/group/ops/nginx/nginxSSL.html","title":"SSL","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":1}]},"filePathRelative":"group/ops/nginx/nginxSSL.md"}');export{t as data};

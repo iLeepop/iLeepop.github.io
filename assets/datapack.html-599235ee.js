@@ -1,0 +1,1 @@
+import{_ as a,o as t,c,b as e,d as o}from"./app-5539d687.js";const s={},n=e("h1",{id:"简介",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#简介","aria-hidden":"true"},"#"),o(" 简介")],-1),r=e("p",null,"未开坑",-1),_=[n,r];function d(i,l){return t(),c("div",null,_)}const f=a(s,[["render",d],["__file","datapack.html.vue"]]);export{f as default};

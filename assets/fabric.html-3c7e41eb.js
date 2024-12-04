@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-43dc807f","path":"/game/mc/fabric.html","title":"简介","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":2}]},"filePathRelative":"game/mc/fabric.md"}');export{a as data};

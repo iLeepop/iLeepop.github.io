@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-fbffd732","path":"/group/dev/typescript/","title":"简介","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":1}]},"filePathRelative":"group/dev/typescript/README.md"}');export{t as data};

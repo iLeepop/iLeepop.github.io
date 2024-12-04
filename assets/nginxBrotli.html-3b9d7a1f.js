@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-17bca408","path":"/group/ops/nginx/nginxBrotli.html","title":"Brotli压缩","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"配置","slug":"配置","link":"#配置","children":[]}],"git":{"contributors":[{"name":"iLeepop","email":"zihao02325@gmail.com","commits":1}]},"filePathRelative":"group/ops/nginx/nginxBrotli.md"}');export{t as data};
