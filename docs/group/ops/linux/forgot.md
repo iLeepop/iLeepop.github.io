@@ -75,3 +75,18 @@ sudo apt-get purge package-name
 sudo apt-get autoremove
 sudo apt-get clean
 ```
+
+# 软链接
+```bash
+ln -s /path/to/file /path/to/link
+# 前者是源文件，后者是软链接
+```
+比如你开发了一个程序A，可以先丢进/usr/local/bin，然后软链接到/usr/bin，这样你就可以在终端中直接使用A了
+注意：源文件丢到其它文件，只是为了方便记忆查询以及操作，并且不受开发影响
+```bash
+ln -s /usr/local/bin/A /usr/bin
+```
+取消链接
+```bash
+unlink /usr/bin/A
+```

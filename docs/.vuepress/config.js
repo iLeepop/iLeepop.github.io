@@ -231,6 +231,13 @@ export default defineUserConfig({
                             children: [
                                 '/group/ops/git/',
                             ]
+                        },
+                        {
+                            text: 'Anaconda',
+                            collapsible: true,
+                            children: [
+                                '/group/ops/anaconda/',
+                            ]
                         }
                     ]
                 },
